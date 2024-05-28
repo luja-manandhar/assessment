@@ -1,13 +1,14 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { EMPTY, Observable } from 'rxjs';
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { ProductInterface } from '../../models/product.interface';
+import { CurrencyFormatPipe } from '../../pipes/currency-format.pipe';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [AsyncPipe, JsonPipe],
+  imports: [AsyncPipe, CurrencyFormatPipe],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
 })

@@ -2,6 +2,6 @@
   <div class="product">
     <h3 class="name">{{ product.name }}</h3>
     <p class="description">{{ product.description }}</p>
-    <p class="price">{{ product.price }}</p>
+    <p class="price">{{ product.price | currencyFormat }}</p>
   </div>
 }
