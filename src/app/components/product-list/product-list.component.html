@@ -1,7 +1,7 @@
 @for (product of productList$ | async; track $index) {
-  <div class="product">
+  <a [routerLink]="['/products', product.id]" class="product" appHighlightProduct>
     <h3 class="name">{{ product.name }}</h3>
     <p class="description">{{ product.description }}</p>
     <p class="price">{{ product.price | currencyFormat }}</p>
-  </div>
+  </a>
 }

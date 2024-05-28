@@ -4,11 +4,13 @@ import { EMPTY, Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { ProductInterface } from '../../models/product.interface';
 import { CurrencyFormatPipe } from '../../pipes/currency-format.pipe';
+import { HighlightProductDirective } from '../../directives/highlight-product.directive';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [AsyncPipe, CurrencyFormatPipe],
+  imports: [AsyncPipe, CurrencyFormatPipe, HighlightProductDirective, RouterLink],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
 })
