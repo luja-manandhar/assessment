@@ -1,5 +1,5 @@
 @if (product$ | async; as product) {
-  <div class="row">
+  <div class="justify">
     <h1 class="name">{{product.name}}</h1>
     <a class="edit" [routerLink]="['/products/', product.id,'edit']">Edit</a>
   </div>

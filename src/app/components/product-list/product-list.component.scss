@@ -2,6 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px;
 }
 
 .product {
@@ -12,4 +15,9 @@
   color: #333;
   transition: .3s ease-in-out;
   text-decoration: none;
+  .description {
+    height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
