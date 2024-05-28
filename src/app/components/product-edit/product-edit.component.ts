@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { ProductInterface } from '../../models/product.interface';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EMPTY, Observable, tap } from 'rxjs';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 

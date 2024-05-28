@@ -1,0 +1,42 @@
+<form [formGroup]="productForm" (ngSubmit)="createProduct()">
+  <div class="form-div">
+    <label>Name:</label><br />
+    <input formControlName="name">
+    @if (productForm.get('name')?.touched) {
+    @if (productForm.get('name')?.errors?.['required']) {
+    <div class="error">Name is required.</div>
+    }
+    @if (productForm.get('name')?.errors?.['minlength']) {
+    <div class="error">Name is must have atleat 3 character.</div>
+    }
+    }
+  </div>
+  <div class="form-div">
+    <label>Description:</label><br />
+    <textarea formControlName="description"></textarea>
+    @if (productForm.get('description')?.touched) {
+    @if (productForm.get('description')?.errors?.['required']) {
+    <div class="error">Description is required.</div>
+    }
+    @if (productForm.get('description')?.errors?.['minlength']) {
+    <div class="error">Description is must have atleat 100 character.</div>
+    }
+    }
+  </div>
+  <div class="form-div">
+    <label>Price:</label><br />
+    <input formControlName="price">
+    @if (productForm.get('price')?.touched) {
+    @if (productForm.get('price')?.errors?.['required']) {
+    <div class="error">Price is required.</div>
+    }
+    @if (productForm.get('price')?.errors?.['min']) {
+    <div class="error">Price is must more than 0.</div>
+    }
+    }
+  </div>
+  <div class="form-div justify">
+    <button>create</button>
+    <button type="button" (click)="cancel()">cancel</button>
+  </div>
+</form>

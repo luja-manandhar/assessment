@@ -23,6 +23,10 @@ export class ProductService {
     return this.http.post(environment.API_ENDPOINT+"/edit-product", product);
   }
 
+  createProduct(product: Partial<{ name: string | null, description: string | null, price: number | null }>) {
+    return this.http.post(environment.API_ENDPOINT+"/add-product", product);
+  }
+
   searchProduct(query: string) {
     const search = query.toLowerCase();
     return this.http.get<ProductInterface[]>(environment.API_ENDPOINT+"/products").pipe(

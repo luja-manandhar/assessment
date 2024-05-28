@@ -3,5 +3,10 @@
   display: block;
 }
 input {
-  width: 100%;
+  width: calc(100% - 20px);
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid;
+  padding: 5px;
 }

@@ -7,6 +7,26 @@
   padding: 10px;
 }
 
+.flex-row {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  .add-product-btn {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    background: #eee;
+    border: 1px solid #222;
+    border-radius: 5px;
+    padding: 5px 15px;
+    text-transform: capitalize;
+    font-size: 18px;
+  }
+}
+
 .product {
   width: 250px;
   padding: 10px;
@@ -21,3 +41,4 @@
     text-overflow: ellipsis;
   }
 }
+
