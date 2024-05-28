@@ -1,1 +1,8 @@
-<p>product-detail works!</p>
+@if (product$ | async; as product) {
+  <div class="row">
+    <h1 class="name">{{product.name}}</h1>
+    <a class="edit" [routerLink]="['/products/', product.id,'edit']">Edit</a>
+  </div>
+  <p class="price">{{product.price | currencyFormat}}</p>
+  <p class="description">{{product.description}}</p>
+}

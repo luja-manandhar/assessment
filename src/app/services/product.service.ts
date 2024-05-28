@@ -16,7 +16,7 @@ export class ProductService {
   }
 
   getProduct(id: number): Observable<ProductInterface> {
-    return this.http.get<ProductInterface>(environment.API_ENDPOINT+"/get-product/"+id);
+    return this.http.get<ProductInterface>(environment.API_ENDPOINT+"/product/"+id);
   }
 
   updateProduct(product: ProductInterface) {
