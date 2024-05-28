@@ -8,4 +8,6 @@
     <p class="description">{{ product.description }}</p>
     <p class="price">{{ product.price | currencyFormat }}</p>
   </a>
+} @empty {
+<h3>{{ errormsg ?? 'No Products Found.'}}</h3>
 }

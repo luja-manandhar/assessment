@@ -6,3 +6,6 @@
   <p class="price">{{product.price | currencyFormat}}</p>
   <p class="description">{{product.description}}</p>
 }
+@if (errormsg) {
+  <h3 class="error">{{ errormsg }}</h3>
+}

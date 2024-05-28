@@ -13,6 +13,10 @@
     margin-bottom: 5px;
   }
   .edit {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: #000;
     background: #eee;
@@ -21,6 +25,11 @@
     padding: 5px 15px;
     text-transform: capitalize;
     font-size: 18px;
+    transition: .5s ease-in-out;
+    &:hover {
+      background: #888;
+      color: #fff;
+    }
   }
 }
 

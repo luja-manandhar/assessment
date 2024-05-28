@@ -20,13 +20,13 @@
     <div class="error">Description is required.</div>
     }
     @if (productForm.get('description')?.errors?.['minlength']) {
-    <div class="error">Description is must have atleat 100 character.</div>
+    <div class="error">Description is must have atleat 50 character.</div>
     }
     }
   </div>
   <div class="form-div">
     <label>Price:</label><br />
-    <input formControlName="price">
+    <input type="number" formControlName="price">
     @if (productForm.get('price')?.touched) {
     @if (productForm.get('price')?.errors?.['required']) {
     <div class="error">Price is required.</div>
@@ -36,9 +36,12 @@
     }
     }
   </div>
+  @if (errormsg) {
+    <div class="error">{{ errormsg }}</div>
+  }
   <div class="form-div justify">
     <button>update</button>
-    <button type="button" (click)="cancelUpdate()">cancel</button>
+    <button class="cancel" type="button" (click)="cancelUpdate()">cancel</button>
   </div>
 </form>
 }

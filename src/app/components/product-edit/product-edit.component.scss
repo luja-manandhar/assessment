@@ -20,9 +20,30 @@
   display: flex;
   justify-content: space-between;
   button {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    background: #eee;
+    border: 1px solid #222;
+    border-radius: 5px;
     padding: 5px 15px;
     text-transform: capitalize;
     font-size: 18px;
+    transition: .5s ease-in-out;
+    padding: 5px 15px;
+    text-transform: capitalize;
+    font-size: 18px;
+    &:hover {
+      background: #888;
+      color: #fff;
+    }
+  }
+  .cancel:hover {
+      background: red;
+      color: #fff;
   }
 }
 

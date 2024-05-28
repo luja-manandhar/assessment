@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { EMPTY, Observable } from 'rxjs';
+import { EMPTY, Observable, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { ProductInterface } from '../../models/product.interface';
 import { CurrencyFormatPipe } from '../../pipes/currency-format.pipe';
@@ -17,11 +17,14 @@ import { ProductSearchComponent } from '../product-search/product-search.compone
 })
 export class ProductListComponent implements OnInit{
   private readonly service = inject(ProductService);
+  errormsg: string | null = null;
 
   productList$: Observable<ProductInterface[]> = EMPTY;
 
   ngOnInit(): void {
-      this.productList$ = this.service.getProducts();
+      this.productList$ = this.service.getProducts().pipe(
+        tap({error: (err) => this.errormsg = err.error.message})
+      );
   }
 
   searchProduct(query: string) {

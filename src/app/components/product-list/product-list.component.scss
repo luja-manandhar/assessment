@@ -1,10 +1,11 @@
 :host {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px;
   max-width: 1000px;
   margin: auto;
   padding: 10px;
+  justify-content: center;
 }
 
 .flex-row {
@@ -24,6 +25,11 @@
     padding: 5px 15px;
     text-transform: capitalize;
     font-size: 18px;
+    transition: .5s ease-in-out;
+    &:hover {
+      background: #888;
+      color: #fff;
+    }
   }
 }
 
@@ -33,7 +39,7 @@
   border-radius: 10px;
   background-color: #eee;
   color: #333;
-  transition: .3s ease-in-out;
+  transition: .5s ease-in-out;
   text-decoration: none;
   .description {
     height: 200px;

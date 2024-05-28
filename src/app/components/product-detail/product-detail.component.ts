@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { EMPTY, Observable } from 'rxjs';
+import { EMPTY, Observable, tap } from 'rxjs';
 import { ProductInterface } from '../../models/product.interface';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AsyncPipe, JsonPipe } from '@angular/common';
@@ -17,9 +17,12 @@ export class ProductDetailComponent implements OnInit{
   private readonly service = inject(ProductService);
   private readonly activeRoute = inject(ActivatedRoute);
   product$: Observable<ProductInterface> = EMPTY;
+  errormsg: string | null = null;
 
   ngOnInit(): void {
     const id = this.activeRoute.snapshot.params['id'];
-    this.product$ = this.service.getProduct(id);
+    this.product$ = this.service.getProduct(id).pipe(
+        tap({error: (err) => this.errormsg = err.status === 0 ? err.error.message : err.statusText })
+    );
   }
 }

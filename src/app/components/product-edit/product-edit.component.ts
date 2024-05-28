@@ -18,6 +18,7 @@ export class ProductEditComponent implements OnInit{
   private readonly activeRoute = inject(ActivatedRoute);
   private readonly fb = inject(FormBuilder);
   private id: number | undefined = undefined;
+  errormsg: string | null = null;
   product: ProductInterface | undefined = undefined;
 
   productForm: FormGroup = new FormGroup([]);
@@ -31,7 +32,7 @@ export class ProductEditComponent implements OnInit{
         this.productForm = this.fb.group({
           id: [res.id],
           name: [res.name, Validators.compose([Validators.required, Validators.minLength(3)])],
-          description: [res.description, Validators.compose([Validators.required, Validators.minLength(100)])],
+          description: [res.description, Validators.compose([Validators.required, Validators.minLength(50)])],
           price: [res.price, Validators.compose([Validators.required, Validators.min(1)])],
         })
       }
@@ -43,7 +44,7 @@ export class ProductEditComponent implements OnInit{
     if (!this.productForm.valid) return;
     this.service.updateProduct(this.productForm.value).subscribe({
       complete: () => this.router.navigate(['/products']),
-      error: (err) => console.error(err)
+      error: (err) => this.errormsg = err.error.message
     });
   }
 

@@ -13,7 +13,7 @@ export class HighlightProductDirective {
   }
 
   @HostListener('mouseenter') onMouseOver() {
-    this.highlight("background-color: #333; color: #eee");
+    this.highlight("background-color: #999; color: #fff");
   }
 
   @HostListener('mouseleave') onMouseOut() {
